@@ -4,12 +4,17 @@
             Thank you for accepting the terms of use of this software.
 """
 
-import requests
 import random,time
 import datetime
 import threading,httpx,os
 import json
-from capmonster_python import HCaptchaTask
+
+try:
+	from capmonster_python import HCaptchaTask
+	import requests
+except ImportError:
+	os.system("pip install capmonster_python")
+	os.system("pip install requests")
 
 done = 0
 bad = 0
